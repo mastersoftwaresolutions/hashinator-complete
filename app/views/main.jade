@@ -1,0 +1,29 @@
+doctype html
+
+html
+    head
+        if typeof(requireJSConfig) != 'undefined'
+            script.
+                var require = !{JSON.stringify(requireJSConfig)}
+
+        script(data-main="/js/main.js", src="/js/require.js")
+
+    body
+
+        h1 Hashinator
+
+        | Input:
+        input#input(value="Type something")
+        button#hashIt
+            span Get Hashes!
+
+        br
+        dl
+            dt MD5
+            dd#md5 --
+            dt SHA1
+            dd#sha1 --
+            dt SHA256
+            dd#sha256 --
+            dt Scrypt (N:1024, r:1, p:1)
+            dd#scrypt (to be implemented)
